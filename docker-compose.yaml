@@ -1,0 +1,20 @@
+services:
+  react-prod:
+    build:
+      context: ./app_front-end
+      dockerfile: ../dockerfile.prod
+    image: trocskillhub-frontend
+    ports:
+      - "8080:80"
+
+  react-dev:
+    build:
+      context: ./app_front-end
+      dockerfile: ../dockerfile.dev
+    ports:
+      - "5173:5173"
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /app_front-end
