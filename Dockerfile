@@ -41,7 +41,4 @@ COPY --chown=nginx:nginx --from=builder /app_front-end/dist /usr/share/nginx/htm
 # Note: The default NGINX container now listens on port 8080 instead of 80
 EXPOSE 8080
 
-# Start Nginx directly with custom config
-ENTRYPOINT ["nginx", "-c", "/etc/nginx/nginx.conf"]
-CMD ["-g", "daemon off;"]
 
